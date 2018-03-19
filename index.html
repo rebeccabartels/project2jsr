@@ -1,0 +1,118 @@
+
+<html class="no-js" lang="">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Feedr</title>
+      <link rel="stylesheet" href="styles/normalize.css" media="screen" charset="utf-8">
+      <link rel="stylesheet" href="styles/html5bp.css" media="screen" charset="utf-8">
+      <link rel="stylesheet" href="styles/style.css" media="screen" charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=2">
+
+    </head>
+
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <header>
+          <div class="loader">
+            <div id="loader-6">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <p>loading...</p>
+            </div>
+      </div>
+
+      <!--
+      <img alt="loading results" label="loading results" src="../jsr-12/images/ajax_loader.gif"/><br/>
+            <p>loading...</p>
+          </div>
+        -->
+          <section class="container">
+            <a href="#"><h1>Feedr</h1></a>
+            <nav>
+              <ul role="menu" aria-label="news sources">
+                <li role="button" id="chooseSource">Choose a news source:
+                  <ul role="menu" id="sourcesList">
+                      <li role="menuitem" data-api="nytAPI" id="nyt">New York Times</li>
+                      <li role="menuitem" data-api="guardAPI" id="wp">The Guardian</li>
+                      <li role="menuitem" data-api="newsAPI" id="wp">Random Stuffs</li>
+                    
+                    <li role = "menuitem" data-api="financeAPI" id="wp">Finance</li>
+                    <li role="menuitem" data-api="nasaAPI" id="wp">Random Stuffs</li>
+                  </ul>
+                </li>
+              </ul>
+              <section id="search">
+                <input type="text" name="name" value="">
+                <a href="#"><img src="images/search.png" alt="" /></a>
+              </section>
+            </nav>
+            <div class="clearfix"></div>
+          </section>
+        </header>
+        <div id="popUp" class="loader hidden">
+          <a href="#" class="closePopUp">Smerp</a>
+          <div class="container">
+            <h1>Article title here</h1>
+            <p>
+              Article description/content here.
+            </p>
+            <a href="#" class="popUpAction" target="_blank">Read more from source</a>
+          </div>
+        </div>
+        <section id="main" class="container hide">
+          <h1>Articles</h1>
+        </section>
+
+        <script id="template" type="text/x-handlebars-template">
+          <article class="article">
+
+            <section class="featuredImage" data-url="{{link}}">
+            <img src="{{pic}}" alt="" />
+            </section>
+            <section class="articleContent">
+                <h3>{{hed}}</h3></a>
+                <p>{{abstract}}</p>
+                <div class="inform">
+                <img src="../jsr-12/images/info-flat.png" label="open details in a modal layer" title="details" alt="get more article info" class="info" data-id="{{id}}"/>
+                </div>
+            </section>
+
+            <section class="impressions"></section>
+            <div class="clearfix"></div>
+            <div class="modal" id="{{id}}">
+              <div class="modal-content">
+                <button class="close" data-id="{{id}}">Close Window</button>
+                  <header>
+                  <img src="{{pic}}" alt="article thumbnail" />
+                  <h3>{{hed}}</h3>
+                  <h4>{{author}}<h4>
+                  </header>
+                  <section role="main">
+                    <p>{{date}}
+                    <p>{{abstract}}</p>
+                    <ul>
+                      <li>Type: {{type}}</li>
+                      <li>Subject: {{subject}}</li>
+                    </ul>
+                    <a href="{{link}}"><p>Read the entire article on {{newsSource}}</p></a>
+                  </section>
+                </div>
+            </div>
+          </article>
+        </script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="js/app.js"></script>
+
+
+    </body>
